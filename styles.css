@@ -34,6 +34,8 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
     transition: background-color 0.3s ease;
+    z-index: 1; /* Asegura que el botón esté delante de las serpientes */
+
 }
 
 button:hover {
