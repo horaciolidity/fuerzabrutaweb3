@@ -1,26 +1,13 @@
-html,body {
-  padding: 0;
-  margin: 0;
-  position: relative;
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #1e314b, #141e30); /* Fondo degradado oscuro */
 }
-div {
-  display: block;
-  position: relative;
-}
-svg {
-  max-width: 100%;
-}
-a {
-  position: fixed;
-  top: 2em;
-  left: 2em;
-  z-index: 99999;
-  text-decoration: none;
-  color: #FFF;
-  padding: .5em;
-  font-family: arial;
-  border: 2px solid #FFF;
-}
+
 button {
     font-size: 16px;
     padding: 10px 20px;
@@ -29,12 +16,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     transition: background-color 0.3s ease;
-    z-index: 1; /* Asegura que el botón esté delante de las serpientes */
 }
 
 button:hover {
