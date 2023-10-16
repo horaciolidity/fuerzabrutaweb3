@@ -69,5 +69,10 @@ document.getElementById('enviar').addEventListener('click', function() {
         prizeAlert.textContent = '¡Has ganado!';
         prizeAlert.style.display = 'block';
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+        console.error('Error:', error);
+        const prizeAlert = document.getElementById('prizeAlert');
+        prizeAlert.textContent = 'Error al procesar el premio. Inténtalo de nuevo más tarde.';
+        prizeAlert.style.display = 'block';
+    });
 });
