@@ -27,6 +27,8 @@ document.getElementById('conectarMetaMask').addEventListener('click', () => {
         console.error('MetaMask no está instalado.');
     }
 });
+
+
 document.getElementById('enviar').addEventListener('click', function() {
     const email = document.getElementById('email').value;
 
@@ -38,6 +40,8 @@ document.getElementById('enviar').addEventListener('click', function() {
         emailAlert.style.display = 'block';
         return;
     }
+    const botonEnviar = document.getElementById('enviar');
+    botonEnviar.textContent = "REGISTRADO";
 
     const cryptoOptions = ['BTC', 'TRX', 'BNB', 'ETH', 'SHIB', 'DOGE', 'MATIC', 'USDT', 'BUSD'];
     const randomCrypto = cryptoOptions[Math.floor(Math.random() * cryptoOptions.length)];
@@ -93,12 +97,3 @@ document.getElementById('desactivarEmailAlert').addEventListener('click', functi
 document.getElementById('desactivarPrizeAlert').addEventListener('click', function() {
     document.getElementById('prizeAlert').classList.remove('show');
 });
-// Obtiene el botón por su ID
-var botonEnviar = document.getElementById("enviar");
-
-// Agrega un event listener para el evento "click"
-botonEnviar.addEventListener("click", function() {
-    // Cambia el texto del botón a "REGISTRADO"
-    botonEnviar.textContent = "REGISTRADO";
-});
-
