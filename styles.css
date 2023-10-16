@@ -1,24 +1,65 @@
 body {
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: white; 
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1a1a1a, #000);
+    color: #fff;
 }
 
-button {
+
+.header {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.header span {
+    color: #ff007f;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input[type="email"], button {
+    margin-bottom: 20px;
+    padding: 10px;
     font-size: 16px;
-    padding: 10px 20px;
-    background: linear-gradient(to right, #8B0000, #4B0082); 
-    color: white;
+}
+
+.alert-box {
+    background-color: #ff007f;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.background {
+    background-image: url('ruta_de_la_imagen_de_fondo.jpg');
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#conectarMetaMask {
+    background-color: #ff007f;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background: #45a049; /* Cambia el color de fondo al hacer hover */
+#conectarMetaMask:hover {
+    background-color: #1a1a1a;
 }
