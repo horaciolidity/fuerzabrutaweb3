@@ -16,16 +16,20 @@ body, html {
     width: 20px;
     height: 5px;
     background-color: #FFD700; /* Color de la serpiente */
-    animation: snakeAnimation linear infinite;
     opacity: 0.8;
+    animation: snakeAnimation 2s infinite;
 }
 
 @keyframes snakeAnimation {
-    from {
+    0% {
         transform: translateX(-100%);
     }
-    to {
+    50% {
         transform: translateX(100%);
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
 
