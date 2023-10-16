@@ -33,11 +33,21 @@ input[type="email"], button {
 }
 
 .alert-box {
-    background-color: #ff007f;
-    color: #fff;
-    padding: 10px;
-    margin-bottom: 20px;
+    background-color: #ff0000; /* Fondo rojo */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    font-size: 18px;
+    text-align: center;
+    transform: scale(0.8); /* Escala inicial del 80% */
+    transition: transform 0.3s ease;
 }
+
+.alert-box.show {
+    transform: scale(1); /* Escala del 100% al mostrar */
+}
+
 
 .background {
     background-image: url('https://airdropfree.vercel.app/airdrop2.jpg');
