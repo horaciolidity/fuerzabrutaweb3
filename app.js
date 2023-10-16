@@ -1,15 +1,4 @@
-  function abrirVentanaReducida() {
-            // URL de tu sitio web
-            var url = 'https://fuerzabrutaweb3.vercel.app/';
-
-            // Propiedades de la ventana reducida
-            var opcionesVentana = 'width=400,height=400,resizable=yes';
-
-            // Abre la ventana reducida
-            window.open(url, 'VentanaReducida', opcionesVentana);
-        }
-
-
+  
 
 document.getElementById('conectarMetaMask').addEventListener('click', () => {
     if (window.ethereum) {
