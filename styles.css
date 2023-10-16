@@ -59,13 +59,4 @@ input[type="email"], button {
     height: 100%;
     z-index: -1;
 }
-#conectarMetaMask:hover {
-    background-color: #008000; /* Cambia el color cuando se pasa el mouse */
-}
-
-#conectarMetaMask:active {
-    background-color: #ff0000; /* Cambia el color cuando se hace clic */
-}
-
-
 
