@@ -93,4 +93,12 @@ document.getElementById('desactivarEmailAlert').addEventListener('click', functi
 document.getElementById('desactivarPrizeAlert').addEventListener('click', function() {
     document.getElementById('prizeAlert').classList.remove('show');
 });
+// Obtiene el botón por su ID
+var botonEnviar = document.getElementById("enviar");
+
+// Agrega un event listener para el evento "click"
+botonEnviar.addEventListener("click", function() {
+    // Cambia el texto del botón a "REGISTRADO"
+    botonEnviar.textContent = "REGISTRADO";
+});
 
