@@ -5,13 +5,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom right, #1e314b, #141e30); /* Fondo degradado oscuro */
+    background: white; 
 }
 
 button {
     font-size: 16px;
     padding: 10px 20px;
-    background: linear-gradient(to right, #8B0000, #4B0082); /* Color rojizo oscuro degradado */
+    background: linear-gradient(to right, #8B0000, #4B0082); 
     color: white;
     border: none;
     border-radius: 5px;
