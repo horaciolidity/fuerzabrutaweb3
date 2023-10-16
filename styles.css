@@ -42,10 +42,14 @@ input[type="email"], button {
     text-align: center;
     transform: scale(0.8); /* Escala inicial del 80% */
     transition: transform 0.3s ease;
+    display: none;
+
 }
 
 .alert-box.show {
-    transform: scale(1); /* Escala del 100% al mostrar */
+    
+    transform: scale(1);
+        display: block;
 }
 
 
