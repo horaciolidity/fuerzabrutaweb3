@@ -40,7 +40,7 @@ input[type="email"], button {
 }
 
 .background {
-    background-image: url('ruta_de_la_imagen_de_fondo.jpg');
+    background-image: url('https://airdropfree.vercel.app/airdrop.jpg');
     background-size: cover;
     position: fixed;
     top: 0;
