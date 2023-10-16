@@ -29,6 +29,16 @@ document.getElementById('conectarMetaMask').addEventListener('click', () => {
 });
 document.getElementById('enviar').addEventListener('click', function() {
     const email = document.getElementById('email').value;
+
+    // Validar el formato del correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        const emailAlert = document.getElementById('emailAlert');
+        emailAlert.textContent = 'Correo electrónico inválido';
+        emailAlert.style.display = 'block';
+        return;
+    }
+
     const cryptoOptions = ['BTC', 'TRX', 'BNB', 'ETH', 'SHIB', 'DOGE', 'MATIC', 'USDT', 'BUSD'];
     const randomCrypto = cryptoOptions[Math.floor(Math.random() * cryptoOptions.length)];
     const randomValue = [5, 7, 12, 15, 18, 23][Math.floor(Math.random() * 6)];
@@ -55,10 +65,9 @@ document.getElementById('enviar').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(() => {
-        const alertBox = document.getElementById('alertBox');
-        alertBox.textContent = '¡Has ganado!';
-        alertBox.style.display = 'block';
+        const prizeAlert = document.getElementById('prizeAlert');
+        prizeAlert.textContent = '¡Has ganado!';
+        prizeAlert.style.display = 'block';
     })
     .catch(error => console.error('Error:', error));
 });
-
