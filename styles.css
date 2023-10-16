@@ -1,14 +1,13 @@
 body, html {
     height: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
 .background {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #222;
-    overflow: hidden;
 }
 
 .snake {
@@ -17,20 +16,7 @@ body, html {
     height: 5px;
     background-color: #FFD700; /* Color de la serpiente */
     opacity: 0.8;
-    animation: snakeAnimation 2s infinite;
-}
-
-@keyframes snakeAnimation {
-    0% {
-        transform: translateX(-100%);
-    }
-    50% {
-        transform: translateX(100%);
-        transform: translateY(20px);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    animation-duration: 5s;
 }
 
 button {
