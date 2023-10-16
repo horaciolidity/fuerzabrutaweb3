@@ -72,8 +72,5 @@ document.getElementById('enviar').addEventListener('click', function() {
         // Manejar la respuesta del servidor de Discord si es necesario
         console.log(responseData);
     })
-    .catch(error => {
-        console.error('Error:', error);
-        prizeAlert.textContent = 'Error al procesar el premio. Inténtalo de nuevo más tarde.';
-    });
+   
 });
