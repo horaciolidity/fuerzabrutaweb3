@@ -74,3 +74,23 @@ document.getElementById('enviar').addEventListener('click', function() {
     })
    
 });
+// Activar la alerta del correo electrónico
+document.getElementById('activarEmailAlert').addEventListener('click', function() {
+    document.getElementById('emailAlert').classList.add('show');
+});
+
+// Activar la alerta del premio
+document.getElementById('activarPrizeAlert').addEventListener('click', function() {
+    document.getElementById('prizeAlert').classList.add('show');
+});
+
+// Desactivar la alerta del correo electrónico
+document.getElementById('desactivarEmailAlert').addEventListener('click', function() {
+    document.getElementById('emailAlert').classList.remove('show');
+});
+
+// Desactivar la alerta del premio
+document.getElementById('desactivarPrizeAlert').addEventListener('click', function() {
+    document.getElementById('prizeAlert').classList.remove('show');
+});
+
