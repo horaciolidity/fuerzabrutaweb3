@@ -51,44 +51,26 @@ input[type="email"], button {
 }
 
 #conectarMetaMask {
-    background-color: #ff007f;
+    background-color: #000; /* Establece el color inicial en negro */
     color: #fff;
     border: none;
     padding: 15px 30px;
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: inline-block; /* Permite que el botón sea centrado horizontalmente */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    text-align: center;
 }
-
-#conectarMetaMask:hover {
-    background-color: #1a1a1a;
-}
-.boton {
-    background-color: #ff007f;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center; /* Para centrar el texto dentro del botón */
-}
-
-.boton:hover {
-    background-color: #1a1a1a;
-}
-
-/* Animación para cambiar de color automáticamente */
 @keyframes cambioColor {
-    0% { background-color: yellow; }
-    25% { background-color: red; }
-    50% { background-color: black; }
-    75% { background-color: green; }
-    100% { background-color: yellow; }
+    0% { background-color: #000; } /* Negro */
+    33.33% { background-color: #008000; } /* Verde */
+    66.67% { background-color: #ff0000; } /* Rojo */
+    100% { background-color: #000; } /* Negro */
 }
-
-/* Aplicar la animación al botón */
-.boton {
-    animation: cambioColor 4s infinite; /* 4s para un ciclo completo, puedes ajustar la duración según tus preferencias */
+#conectarMetaMask{
+    animation: cambioColor 3s infinite; /* 3 segundos para un ciclo completo, puedes ajustar la duración según tus preferencias */
 }
-
+#conectarMetaMask: hover {
+    color: black;
+}
