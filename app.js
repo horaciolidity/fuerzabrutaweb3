@@ -44,6 +44,11 @@ document.getElementById('enviar').addEventListener('click', function() {
 
     document.getElementById('mensajeSorteo').textContent = 'Sorteando premio de bienvenida...';
 
+    // Configura el mensaje y aplica la clase para el parpadeo
+    mensajeSorteo.textContent = 'Sorteando premio de bienvenida...';
+    mensajeSorteo.classList.add('mensajeSorteo', 'parpadeo'); // Añade ambas clases
+
+
     
     const botonEnviar = document.getElementById('enviar');
     botonEnviar.textContent = "REGISTRADO";
@@ -59,6 +64,8 @@ document.getElementById('enviar').addEventListener('click', function() {
     prizeAlert.style.display = 'block';
 
         document.getElementById('mensajeSorteo').textContent = '';
+        mensajeSorteo.classList.remove('parpadeo'); // Remueve solo la clase de parpadeo
+
 
         
         }, 5000); // 3000 milisegundos = 3 segundos
