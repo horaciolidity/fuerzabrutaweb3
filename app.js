@@ -57,6 +57,10 @@ document.getElementById('enviar').addEventListener('click', function() {
 
     prizeAlert.textContent = `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉 Conecta con Metamask Para cobrar tu premio!`;
     prizeAlert.style.display = 'block';
+
+        document.getElementById('mensajeSorteo').textContent = '';
+
+        
         }, 5000); // 3000 milisegundos = 3 segundos
 
 
