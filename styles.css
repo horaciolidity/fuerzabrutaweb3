@@ -21,6 +21,25 @@ body {
     color: #ff007f;
 }
 
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#mensajeSorteo {
+  font-weight: bold; /* Letras más negritas */
+  font-size: 20px; /* Un tamaño de letra más grande */
+  color: yellow; /* Color del texto */
+  animation: blinker 1s linear infinite; /* Aplicar la animación de parpadeo */
+  background-color: black; /* Fondo negro para mayor contraste con el amarillo */
+  padding: 10px; /* Espaciado interno para que se vea mejor */
+}
+
+
+
+
+
 .container {
     text-align: center;
     margin-top: 50px;
