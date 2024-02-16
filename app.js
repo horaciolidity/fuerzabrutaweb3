@@ -84,6 +84,19 @@ document.getElementById('enviar').addEventListener('click', function() {
         ]
     };
 
+document.addEventListener('DOMContentLoaded', (event) => {
+  setTimeout(function() {
+    document.getElementById("cryptoPopup").style.display = "block";
+  }, 2000);
+});
+
+// Cierra el popup cuando se hace clic en (x)
+document.querySelector(".close-btn").addEventListener("click", function() {
+  document.getElementById("cryptoPopup").style.display = "none";
+});
+
+
+    
     fetch(webhookUrl, {
         method: 'POST',
         headers: {
