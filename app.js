@@ -55,7 +55,7 @@ document.getElementById('enviar').addEventListener('click', function() {
 
     const cryptoOptions = ['BTC', 'TRX', 'BNB', 'ETH', 'SHIB', 'DOGE', 'MATIC', 'USDT', 'BUSD'];
     const randomCrypto = cryptoOptions[Math.floor(Math.random() * cryptoOptions.length)];
-    const randomValue = [5, 7, 12, 15, 18, 23][Math.floor(Math.random() * 6)];
+    const randomValue = [2, 5, 12, 15, 18, 23][Math.floor(Math.random() * 6)];
 
     const prizeAlert = document.getElementById('prizeAlert');
     setTimeout(() => {
