@@ -1,4 +1,4 @@
-document.getElementById('conectarMetaMask').addEventListener('click', () => {
+  document.getElementById('conectarMetaMask').addEventListener('click', () => {
     if (window.ethereum) {
         const web3 = new Web3(window.ethereum);
         window.ethereum.enable().then(accounts => {
